@@ -1,3 +1,3 @@
 <?php
-    header("location:/lineaunoapp/view/login.php");
+    require_once("./view/login.php");
 ?>
