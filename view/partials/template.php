@@ -1,5 +1,5 @@
 <?php
-$page_tittle = "App Linea Uno Iniciar Sesión"; // Titulo
+$page_tittle = "App Linea"; // Titulo
 $plugins = array();//Plugins por pagina
 include('./partials/header.php');
 ?>

@@ -1,0 +1,19 @@
+.cabecera {
+    background-color: #499F42;
+}
+
+.cabecera h2 {
+    color: #ffff;
+}
+
+
+/*** Login ***/
+
+.login h2 {
+    color: #499F42;
+}
+
+.btn-login {
+    background-color: #0D56A0;
+    color: #ffff;
+}

@@ -5,9 +5,11 @@ include('../partials/header.php');
 ?>
 
 <!-- Escribir codigo aqui -->
+<div class="pl-2 pr-2">
 
+</div>
 <h2>App Línea 1 Metro de Lima</h2>
-<a href="">Recargar tarjeta</a>
+<a href="../rechargeCard/rechargeCard.php">Recargar tarjeta</a>
 <a href="">Ver saldo</a>
 <?php
 include('../partials/footer.php');
