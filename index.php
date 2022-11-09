@@ -1,3 +1,1 @@
-<?php
-    require_once("./view/login.php");
-?>
+<a href="./view/login.php">Iniciar</a>
