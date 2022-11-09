@@ -1,3 +1,3 @@
 <?php
-    header("Location: ./view/login.php")
+    require_once("./view/login.php");
 ?>
