@@ -1,1 +1,3 @@
-<a href="./view/login.php">Iniciar</a>
+<?php
+    header("location: ./view/login.php");
+?>
