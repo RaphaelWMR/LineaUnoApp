@@ -11,7 +11,6 @@
             echo $value;
         }
     ?>
-    <title><?php echo $page_tittle?></title>
 </head>
 <body>
 
