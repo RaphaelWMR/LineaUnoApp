@@ -9,7 +9,7 @@ include('../partials/header.php');
     <div>
         <form>
             <div class="align-items-center mb-3 pb-1 text-center">
-                <h2 class="h1 fw-bold">Política de protección de datos</h2>
+                <h2 class="h1 fw-bold">Términos de uso</h2>
             </div>
             <!-- Paso 1 -->
             <div>

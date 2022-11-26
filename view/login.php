@@ -32,8 +32,8 @@ include('./partials/header.php');
 
                 <a class="small text-muted" href="#!">¿Olvidaste tu contraseña?</a>
                 <p class="mb-3 pb-lg-2" style="color: #393f81;">¿Aún no tienes uan cuenta? <a href="./signUp/SignUp.php" style="color: #393f81;">Regístrate</a></p>
-                <a href="#!" class="small text-muted">Terminos de uso.</a>
-                <a href="#!" class="small text-muted">Política de privacidad</a>
+                <a href="./signIn/useTerms.php" class="small text-muted" target="_blank">Terminos de uso.</a>
+                <a href="./signIn/privacy.php" class="small text-muted" target="_blank">Política de privacidad</a>
             </form>
         </div>
     </div>

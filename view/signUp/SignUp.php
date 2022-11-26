@@ -37,6 +37,10 @@ include('../partials/header.php');
                     <label class="form-label" for="">Nombres</label>
                     <input type="text" id="" class="form-control form-control-lg" placeholder="" />
                 </div>
+                <div class="form-outline mb-1">
+                    <label class="form-label" for="">Fecha de nacimiento</label>
+                    <input type="date" id="" class="form-control form-control-lg" placeholder="" />
+                </div>
             </div>
 
             <!-- Paso 2 -->
