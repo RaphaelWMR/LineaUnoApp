@@ -4,8 +4,6 @@ $plugins = array();//Plugins por pagina
 include('../partials/header.php');
 ?>
 
-<!-- Escribir codigo aqui -->
-
 <h2>Recargar Tarjeta Linea 1</h2>
 <form action="">
     <label for="">Monto</label>

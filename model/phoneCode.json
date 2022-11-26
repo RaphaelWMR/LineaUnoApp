@@ -1,0 +1,12 @@
+{
+    "peru": {
+        "es": "Perú",
+        "en": "Peru",
+        "code": "+51"
+    },
+    "venezuela": {
+        "es": "Venezuela",
+        "en": "Venezuela",
+        "code": "+58"
+    }
+}
