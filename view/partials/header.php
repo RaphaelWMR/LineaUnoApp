@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/LineaUnoApp/view/css/styles.css">
     <link rel="stylesheet" href="/LineaUnoApp/view/css/formStyles.css">
     <?php
+    date_default_timezone_set("America/Lima");
     foreach ($plugins as $i => $value) {
         echo $value;
     }

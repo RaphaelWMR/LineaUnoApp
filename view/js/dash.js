@@ -23,6 +23,18 @@ function hideShowForm(id) {
     }
 }
 
+/*HideShowOther */
+function hideShowOther() {
+    var card = document.getElementById('otherCardType');
+    var name = document.getElementById('otherCardOwner');
+    var button = document.getElementById('buttonRecharge-other');
+    if (card.style.display == "none") {
+        card.style.display = "block";
+        name.style.display = "block";
+        button.style.display = "block";
+    }
+}
+
 /* Recharge form */
 
 function mascara(o, f) {

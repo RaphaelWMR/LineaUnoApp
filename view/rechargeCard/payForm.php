@@ -3,6 +3,8 @@ $page_tittle = "App Linea Uno"; // Titulo
 $plugins = array(); //Plugins por pagina
 array_push($plugins, "<link rel='stylesheet' href='../css/pay.css'>");
 include('../partials/header.php');
+$money = $_GET["money"];
+$money = substr($money, 3);
 ?>
 
 
@@ -11,7 +13,7 @@ include('../partials/header.php');
 <div class="row justify-content-center mt-2 ">
     <div class="card border-success bg-light mb-3" style="width: 90%;">
         <div class="card-body text-success">
-            <h5 class="card-title text-center">MONTO: S/ 5</h5>
+            <h5 class="card-title text-center">MONTO: S/ <?php echo  $money ?></h5>
             <div class="payment-title">
                 <h1>Informacion de pago</h1>
             </div>
@@ -136,17 +138,15 @@ include('../partials/header.php');
         <div class="card-footer bg-transparent border-success">
             <div class="container">
                 <div class="text-center row">
-                    <input type="submit" value="Confirmar recarga" class="btn btn-success m-1">
+                    <form action="./sucessPay.php" method="get">
+                        <input type="hidden" name="money" value="<?php echo $money; ?>">
+                        <input type="submit" value="Confirmar recarga" class="btn btn-success m-1">
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </div>
-
-
 
 <?php
 $scripts = array(); //scripts por pagina
