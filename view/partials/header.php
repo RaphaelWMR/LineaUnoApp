@@ -19,7 +19,7 @@
     <nav class="cabecera m-0 p-0 navbar sticky-top">
         <div class="p-4">
             <div class="text-center">
-                <img src="https://www.lineauno.pe/wp-content/themes/linea1/img/logo.svg" width="" height="80rem" alt="">
+                <img src="/LineaUnoApp/view/img/logo.svg" width="" height="80rem" alt="">
             </div>
         </div>
     </nav>
