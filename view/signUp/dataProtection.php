@@ -29,5 +29,6 @@ include('../partials/header.php');
 </div>
 
 <?php
+$scripts = array(); //Scripts por pagina
 include('../partials/footer.php');
 ?>

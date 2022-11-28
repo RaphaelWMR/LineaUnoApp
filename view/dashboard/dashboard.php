@@ -54,6 +54,6 @@ include('../partials/header.php');
 
 
 <?php
-$plugins = array(); //Plugins por pagina
+$scripts = array(); //Scripts por pagina
 include('../partials/footer.php');
 ?>
