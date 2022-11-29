@@ -64,7 +64,7 @@ include('../partials/header.php');
                     <div id="rechargeForm-2" style="display: none;">
                         <form class="m-1" action="../rechargeCard/payForm.php" method="get">
                             <div class="form-outline p-1">
-                                <input type="" id="form1Example1" class="form-control text-center" placeholder="Monto (S/)" onkeypress="mascara(this,cpf)" name="money" />
+                                <input type="" id="form1Example1" class="form-control text-center" placeholder="Monto (S/)" onkeypress="mascara(this,cpf);" name="money" />
                             </div>
                             <input type="submit" class="btn btn-primary btn-block btn-block" value="Pagar">
                         </form>
@@ -84,7 +84,6 @@ include('../partials/header.php');
                 </div>
             </div>
             <div class="card-body text-light">
-
                 <h5 class="card-title">Tarjeta Destinatario</h5>
 
                 <div class="form-outline p-1 ">
@@ -102,7 +101,7 @@ include('../partials/header.php');
                             <input type="text" class="form-control" id="otherCardOwner" placeholder="Juan Jose Perez Quispe" style="display: none;" disabled>
                         </div>
                     </div>
-                    <input type="" id="form1Example1" class="form-control" placeholder="Monto (S/)" onkeypress="mascara(this,cpf)" name="money" />
+                    <input type="" id="form1Example1" class="form-control" placeholder="Monto (S/)" onkeypress="mascara(this,cpf);" name="money" />
                 </div>
 
             </div>
