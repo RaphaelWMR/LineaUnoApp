@@ -1,0 +1,64 @@
+{
+    "login": {
+        "pageTittleLabel": {
+            "en": "Lima Metro Express 1 App Login",
+            "es": "App Linea Uno Iniciar Sesión",
+            "pt": "App Linha 1 do Metrô de Lima Iniciar Sessão"
+        },
+        "tittleLabel": {
+            "en": "Lima Metro<br>Express 1 App",
+            "es": "App Linea 1<br>del Metro de Lima",
+            "pt": "App Linha 1<br>do Metrô de Lima"
+        },
+        "loginLabel": {
+            "en": "Login",
+            "es": "Iniciar Sesión",
+            "pt": "Iniciar Sessão"
+        },
+        "idLabel": {
+            "en": "Identification document number",
+            "es": "Número de documento de indentidad",
+            "pt": "Número de identificação"
+        },
+        "idInput": {
+            "en": "DNI, ACR or Passport",
+            "es": "DNI, CE o Pasaporte",
+            "pt": "DNI, CE ou Passaporte"
+        },
+        "passLabel": {
+            "en": "Password",
+            "es": "Contraseña",
+            "pt": "Senha"
+        },
+        "loginButton": {
+            "en": "Login",
+            "es": "Iniciar Sesión",
+            "pt": "Entrar"
+        },
+        "forgotPasswordLabel": {
+            "en": "Forgot password?",
+            "es": "¿Has olvidado la contraseña?",
+            "pt": "Esqueceu a senha?"
+        },
+        "donthaveaccountyetLabel": {
+            "en": "Do not you have an account yet?",
+            "es": "¿Aún no tienes una cuenta?",
+            "pt": "Não tens uma conta ainda?"
+        },
+        "singupLink": {
+            "en": "Sign up",
+            "es": "Regístrate",
+            "pt": "Inscrever-se"
+        },
+        "termsLabel": {
+            "en": "Terms of use",
+            "es": "Términos de uso",
+            "pt": "Termos de uso"
+        },
+        "policyLabel": {
+            "en": "Privacy Policy",
+            "es": "Política de privacidad",
+            "pt": "Política de Privacidade"
+        }
+    }
+}
