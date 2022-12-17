@@ -1,0 +1,61 @@
+{
+    "users": [{
+            "id": 1,
+            "doctype": 1,
+            "docN": "76548785",
+            "pass": "12345",
+            "fl": "Perez",
+            "sl": "Gomez",
+            "n": "Juan",
+            "dateY": 1999,
+            "dateM": 4,
+            "dateD": 5,
+            "phoneCode": 1,
+            "telefono": 946547845,
+            "email": "juan.gomez1@gmail.com",
+            "cards": {
+                "1": {
+                    "id": "1",
+                    "code": 654987123,
+                    "type": "adulto",
+                    "cash": 10.90
+                },
+                "2": {
+                    "id": "2",
+                    "type": "medio",
+                    "code": 321456987,
+                    "cash": 15.20
+                }
+            }
+        },
+        {
+            "id": 2,
+            "doctype": 1,
+            "docN": "75846521",
+            "pass": "12345",
+            "fl": "Garcia",
+            "sl": "Rodriguez",
+            "n": "Fernando",
+            "dateY": 2000,
+            "dateM": 12,
+            "dateD": 16,
+            "phoneCode": 1,
+            "telefono": 958745632,
+            "email": "fer.rodriguez1@gmail.com",
+            "cards": {
+                "1": {
+                    "id": "1",
+                    "code": 741478542,
+                    "type": "adulto",
+                    "cash": 20.00
+                },
+                "2": {
+                    "id": "2",
+                    "type": "adulto",
+                    "code": 963258964,
+                    "cash": 8.10
+                }
+            }
+        }
+    ]
+}

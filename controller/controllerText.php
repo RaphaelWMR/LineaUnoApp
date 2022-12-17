@@ -1,8 +1,8 @@
 <?php
+require_once "getJSON.php";
 function getLogin($lang)
 {
-    $rute = "\..\model\\text.json";
-    $content = json_decode(file_get_contents(__DIR__ . $rute));
+    $content = getTextJSON();
     return array(
         "pageTittleLabel"           =>  $content->login->pageTittleLabel->$lang,
         "tittleLabel"               =>  $content->login->tittleLabel->$lang,

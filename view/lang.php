@@ -1,5 +1,5 @@
 <?php
-$page_tittle = "Languaje/Idioma/Língua";
+$page_tittle = "App Metro de Lima";
 $plugins = array();
 include('./partials/header.php');
 ?>
