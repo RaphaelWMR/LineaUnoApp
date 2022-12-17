@@ -13,19 +13,19 @@ include('./partials/header.php');
     </div>
     <div class="login m-3">
         <div>
-            <form action="./dashboard/dashboard.php">
+            <form action="./dashboard/dashboard.php" method="get">
+                <input type="hidden" name="lang" value="<?php echo $lang; ?>">
                 <div class="align-items-center mb-3 pb-1 text-center">
                     <h2 class="h1 fw-bold"><?php echo $text['loginLabel']; ?></h2>
                 </div>
                 <div class="form-outline mb-1">
                     <label class="form-label" for=""><?php echo $text['idLabel']; ?></label>
-                    <input type="text" id="" class="form-control form-control-lg" placeholder="<?php echo $text['idInput']; ?>" />
+                    <input type="text" name="user" id="" class="form-control form-control-lg" placeholder="<?php echo $text['idInput']; ?>" />
                 </div>
 
                 <div class="form-outline mb-3">
                     <label class="form-label" for=""><?php echo $text['passLabel']; ?></label>
-                    <input type="password" id="" class="form-control form-control-lg" placeholder="" />
-
+                    <input type="password" name="pass" id="" class="form-control form-control-lg" placeholder="" />
                 </div>
 
                 <div class="text-center">

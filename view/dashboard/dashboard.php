@@ -1,12 +1,66 @@
 <?php
 $page_tittle = "App Linea Uno"; // Titulo
 $plugins = array(); //Plugins por pagina
+require_once($_SERVER['DOCUMENT_ROOT'] . '/LineaUnoApp/controller/controlerUsers.php');
+$identity = $_GET["user"];
+$pass = $_GET["pass"];
+$userid = searchUser($identity, $pass);
+$user = null;
+if ($userid >= 0) {
+    $user = userData($userid);
+}
+
 include('../partials/header.php');
 ?>
 
 <!-- Escribir codigo aqui -->
 
 <div class="row justify-content-center mt-2">
+    <h1><?php echo $user['name']; ?></h1>
+    <br>
+    <h1><?php echo count($user['cards']); ?></h1>
+    <h1><?php echo $user['cards'][0]->id; ?></h1>
+    <!-- Cards iterables -->
+    <?php
+    for ($i = 0; $i < count($user['cards']); $i++) { ?>
+        <!-- Cards print -->
+        <div class="card border-success bg-success mb-3" style="max-width: 18rem;">
+            <div class="card-header bg-success border-light text-light">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p>Tarjeta <?php echo $user['cards'][$i]->id + 1 ?></p>
+                    </div>
+                    <div>
+                        <p><?php echo showCardCode($user['cards'][$i]->code); ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body text-light">
+                <h5 class="card-title">Tarjeta <?php echo $user['cards'][$i]->type?></h5>
+                <p id="card-1-money" class="card-text" style="display: none;">Saldo: S/15.50</p>
+            </div>
+            <div class="card-footer bg-transparent border-light">
+                <div class="container">
+                    <div class="text-center row">
+                        <button id="card-1-button" type="button" class="btn btn-light m-1" onclick="hideShowCardMoney('1')">Ver saldo</button>
+                        <!-- Form recargar -->
+                        <div id="rechargeForm-1" style="display: none;">
+                            <form class="m-1" action="../rechargeCard/payForm.php" method="get">
+                                <div class="form-outline p-1">
+                                    <input type="" id="form1Example1" class="form-control text-center" placeholder="Monto (S/)" onkeypress="mascara(this,cpf)" name="money" />
+                                </div>
+                                <input type="submit" class="btn btn-primary btn-block btn-block" value="Pagar">
+                            </form>
+                        </div>
+                        <button id="buttonRecharge-1" type="button" class="btn btn-light m-1 " href="../rechargeCard/rechargeCard.php" onclick="hideShowForm('1')">Recargar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+    <!-- Cards print -->
     <div class="card border-success bg-success mb-3" style="max-width: 18rem;">
         <div class="card-header bg-success border-light text-light">
             <div class="d-flex justify-content-between">

@@ -60,5 +60,28 @@
             "es": "Política de privacidad",
             "pt": "Política de Privacidade"
         }
+    },
+    "dash": {
+        "adultCard": {
+            "en": "Adult Card",
+            "es": "Tarjeta Adulto",
+            "pt": "Cartão de Adulto "
+        },
+        "halfFare": {
+            "en": "Half Fare Card",
+            "es": "Tarjeta Medio",
+            "pt": "Cartão de Meia Tarifa"
+        },
+        "logout": {
+            "en": "Logout",
+            "es": "Cerrar Sesión",
+            "pt": "Sair"
+        },
+        "checkBalance": {
+            "en": "Check balance",
+            "es": "Ver saldo",
+            "pt": "Verificar saldo"
+        }
     }
+
 }
