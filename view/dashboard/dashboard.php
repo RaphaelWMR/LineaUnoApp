@@ -2,6 +2,7 @@
 $page_tittle = "App Linea Uno"; // Titulo
 $plugins = array(); //Plugins por pagina
 require_once($_SERVER['DOCUMENT_ROOT'] . '/LineaUnoApp/controller/controlerUsers.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/LineaUnoApp/controller/controllerText.php');
 $identity = $_GET["user"];
 $pass = $_GET["pass"];
 $userid = searchUser($identity, $pass);
@@ -9,9 +10,13 @@ $user = null;
 if ($userid >= 0) {
     $user = userData($userid);
 }
-
 include('../partials/header.php');
+$lang = $_GET["lang"];
+$text = getDash($lang);
+$colorBg = 'success';
+$colorTxt = 'light';
 ?>
+
 
 <!-- Escribir codigo aqui -->
 
@@ -22,37 +27,47 @@ include('../partials/header.php');
     <h1><?php echo $user['cards'][0]->id; ?></h1>
     <!-- Cards iterables -->
     <?php
-    for ($i = 0; $i < count($user['cards']); $i++) { ?>
+    for ($i = 0; $i < count($user['cards']); $i++) {
+        if ($user['cards'][$i]->type == 1) {
+            $colorBg = 'success';
+            $colorTxt = 'light';
+        } else {
+            $colorBg = 'light';
+            $colorTxt = 'success';
+        }
+    ?>
         <!-- Cards print -->
-        <div class="card border-success bg-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-success border-light text-light">
+
+        <div class="card border-<?php echo $colorTxt; ?> bg-<?php echo $colorBg; ?> mb-3" style="max-width: 18rem;">
+            <div class="card-header bg-<?php echo $colorBg; ?> border-<?php echo $colorTxt; ?> text-<?php echo $colorTxt; ?>">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <p>Tarjeta <?php echo $user['cards'][$i]->id + 1 ?></p>
+                        <p><?php echo $text['cardLabel']; ?> <?php echo $user['cards'][$i]->id + 1 ?></p>
                     </div>
                     <div>
                         <p><?php echo showCardCode($user['cards'][$i]->code); ?></p>
                     </div>
                 </div>
             </div>
-            <div class="card-body text-light">
-                <h5 class="card-title">Tarjeta <?php echo $user['cards'][$i]->type?></h5>
-                <p id="card-1-money" class="card-text" style="display: none;">Saldo: S/15.50</p>
+            <div class="card-body text-<?php echo $colorTxt; ?>">
+                <h5 class="card-title"><?php echo $text[showCardType($user['cards'][$i]->type)]; ?></h5>
+                <p id="card-<?php echo $i; ?>-money" class="card-text" style="display: none;"><?php echo $text['balanceLabel']; ?>: S/<?php echo $user['cards'][$i]->cash ?></p>
             </div>
-            <div class="card-footer bg-transparent border-light">
+            <div class="card-footer bg-transparent border-<?php echo $colorTxt; ?>">
                 <div class="container">
                     <div class="text-center row">
-                        <button id="card-1-button" type="button" class="btn btn-light m-1" onclick="hideShowCardMoney('1')">Ver saldo</button>
+                        <button id="card-<?php echo $i; ?>-button" type="button" class="btn btn-<?php echo $colorTxt; ?> m-1" onclick="hideShowCardMoney('<?php echo $i; ?>','<?php echo $text['hideBalanceLabel']; ?>','<?php echo $text['checkBalanceLabel']; ?>')"><?php echo $text['checkBalanceLabel']; ?></button>
                         <!-- Form recargar -->
-                        <div id="rechargeForm-1" style="display: none;">
+                        <div id="rechargeForm-<?php echo $i; ?>" style="display: none;">
                             <form class="m-1" action="../rechargeCard/payForm.php" method="get">
                                 <div class="form-outline p-1">
-                                    <input type="" id="form1Example1" class="form-control text-center" placeholder="Monto (S/)" onkeypress="mascara(this,cpf)" name="money" />
+                                    <input type="hidden" name="card" value="<?php $user['cards'][$i]->code; ?>">
+                                    <input type="" id="form1Example1" class="form-control text-center" placeholder="<?php echo $text['amountLabel']; ?> (S/)" onkeypress="mascara(this,cpf)" name="money" />
                                 </div>
-                                <input type="submit" class="btn btn-primary btn-block btn-block" value="Pagar">
+                                <input type="submit" class="btn btn-primary btn-block btn-block" value="<?php echo $text['payLabel']; ?>">
                             </form>
                         </div>
-                        <button id="buttonRecharge-1" type="button" class="btn btn-light m-1 " href="../rechargeCard/rechargeCard.php" onclick="hideShowForm('1')">Recargar</button>
+                        <button id="buttonRecharge-<?php echo $i; ?>" type="button" class="btn btn-<?php echo $colorTxt; ?> m-1 " href="../rechargeCard/rechargeCard.php" onclick="hideShowForm('<?php echo $i; ?>')"><?php echo $text['rechargeCardLabel']; ?></button>
                     </div>
                 </div>
             </div>
@@ -60,74 +75,6 @@ include('../partials/header.php');
     <?php
     }
     ?>
-    <!-- Cards print -->
-    <div class="card border-success bg-success mb-3" style="max-width: 18rem;">
-        <div class="card-header bg-success border-light text-light">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <p>Tarjeta 1</p>
-                </div>
-                <div>
-                    <p>4658-7531-7594</p>
-                </div>
-            </div>
-        </div>
-        <div class="card-body text-light">
-            <h5 class="card-title">Tarjeta adulto</h5>
-            <p id="card-1-money" class="card-text" style="display: none;">Saldo: S/15.50</p>
-        </div>
-        <div class="card-footer bg-transparent border-light">
-            <div class="container">
-                <div class="text-center row">
-                    <button id="card-1-button" type="button" class="btn btn-light m-1" onclick="hideShowCardMoney('1')">Ver saldo</button>
-                    <!-- Form recargar -->
-                    <div id="rechargeForm-1" style="display: none;">
-                        <form class="m-1" action="../rechargeCard/payForm.php" method="get">
-                            <div class="form-outline p-1">
-                                <input type="" id="form1Example1" class="form-control text-center" placeholder="Monto (S/)" onkeypress="mascara(this,cpf)" name="money" />
-                            </div>
-                            <input type="submit" class="btn btn-primary btn-block btn-block" value="Pagar">
-                        </form>
-                    </div>
-                    <button id="buttonRecharge-1" type="button" class="btn btn-light m-1 " href="../rechargeCard/rechargeCard.php" onclick="hideShowForm('1')">Recargar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card border-success bg-light mb-3" style="max-width: 18rem;">
-        <div class="card-header bg-light border-success text-success">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <p>Tarjeta 2</p>
-                </div>
-                <div>
-                    <p>9874-4567-2584</p>
-                </div>
-            </div>
-        </div>
-        <div class="card-body text-success">
-            <h5 class="card-title">Tarjeta medio</h5>
-            <p id="card-2-money" class="card-text" style="display: none;">Saldo: S/15.50</p>
-
-        </div>
-        <div class="card-footer bg-transparent border-success">
-            <div class="container">
-                <div class="text-center row">
-                    <button id="card-2-button" type="button" class="btn btn-success m-1" onclick="hideShowCardMoney('2')">Ver saldo</button>
-                    <!-- Form recargar -->
-                    <div id="rechargeForm-2" style="display: none;">
-                        <form class="m-1" action="../rechargeCard/payForm.php" method="get">
-                            <div class="form-outline p-1">
-                                <input type="" id="form1Example1" class="form-control text-center" placeholder="Monto (S/)" onkeypress="mascara(this,cpf);" name="money" />
-                            </div>
-                            <input type="submit" class="btn btn-primary btn-block btn-block" value="Pagar">
-                        </form>
-                    </div>
-                    <button id="buttonRecharge-2" type="button" class="btn btn-success m-1 " href="../rechargeCard/rechargeCard.php" onclick="hideShowForm('2')">Recargar</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="card border-primary  bg-primary   mb-3" style="max-width: 18rem;">
         <form class="" action="../rechargeCard/payForm.php" method="get">
             <div class="card-header bg-primary  border-light text-light">
@@ -162,13 +109,13 @@ include('../partials/header.php');
             <div class="card-footer bg-transparent border-light">
                 <div class="container">
                     <div class="text-center row">
-                        <input type="submit" id="buttonRecharge-other" class="btn btn-light m-1" value="Pagar">
+                        <input type="submit" id="buttonRecharge-other" class="btn btn-light m-1" value="<?php echo $text['payLabel']; ?>">
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <a href="../login.php" class="btn btn-danger">Cerrar Sesión</a>
+    <a href="../login.php" class="btn btn-danger"><?php echo $text['logoutLabel']; ?></a>
 </div>
 
 <?php

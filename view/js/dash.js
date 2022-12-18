@@ -1,12 +1,12 @@
-function hideShowCardMoney(id) {
+function hideShowCardMoney(id, label1, label2) {
     var money = document.getElementById("card-" + id + "-money");
     var button = document.getElementById("card-" + id + "-button");
     if (money.style.display == "none") {
         money.style.display = "block";
-        button.innerHTML = "Ocultar saldo";
+        button.innerHTML = label1;
     } else {
         money.style.display = 'none';
-        button.innerHTML = "Ver saldo";
+        button.innerHTML = label2;
     }
 }
 

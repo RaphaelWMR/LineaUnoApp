@@ -18,3 +18,35 @@ function getLogin($lang)
         "policyLabel"               =>  $content->login->policyLabel->$lang
     );
 }
+function getDash($lang)
+{
+    $content = getTextJSON();
+    return array(
+        "cardLabel"             => $content->dash->card->$lang,
+        "adultCardLabel"        => $content->dash->adultCard->$lang,
+        "halfFareLabel"         => $content->dash->halfFare->$lang,
+        "balanceLabel"          => $content->dash->balance->$lang,
+        "hideBalanceLabel"      => $content->dash->hideBalance->$lang,
+        "checkBalanceLabel"     => $content->dash->checkBalance->$lang,
+        "rechargeCardLabel"     => $content->dash->rechargeCard->$lang,
+        "amountLabel"           => $content->dash->amount->$lang,
+        "payLabel"              => $content->dash->pay->$lang,
+        "reloadOtherCardLabel"  => $content->dash->reloadOtherCard->$lang,
+        "receptorCardLabel"     => $content->dash->receptorCard->$lang,
+        "cardCodeLabel"         => $content->dash->cardCode->$lang,
+        "searchLabel"           => $content->dash->search->$lang,
+        "receptorLabel"         => $content->dash->receptor->$lang,
+        "cancelLabel"           => $content->dash->cancel->$lang,
+        "logoutLabel"           => $content->dash->logout->$lang
+
+    );
+}
+
+function showCardType($n)
+{
+    if ($n == 1) {
+        return "adultCardLabel";
+    } else {
+        return "halfFareLabel";
+    }
+}

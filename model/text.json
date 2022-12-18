@@ -62,6 +62,11 @@
         }
     },
     "dash": {
+        "card": {
+            "en": "Card",
+            "es": "Adulto",
+            "pt": "Cartão"
+        },
         "adultCard": {
             "en": "Adult Card",
             "es": "Tarjeta Adulto",
@@ -72,16 +77,70 @@
             "es": "Tarjeta Medio",
             "pt": "Cartão de Meia Tarifa"
         },
-        "logout": {
-            "en": "Logout",
-            "es": "Cerrar Sesión",
-            "pt": "Sair"
+        "balance": {
+            "en": "Balance",
+            "es": "Saldo",
+            "pt": "Saldo"
         },
         "checkBalance": {
             "en": "Check balance",
             "es": "Ver saldo",
             "pt": "Verificar saldo"
+        },
+        "hideBalance": {
+            "en": "Hide balance",
+            "es": "Ocultar saldo",
+            "pt": "Ocultar saldo"
+        },
+        "rechargeCard": {
+            "en": "Recharge",
+            "es": "Recargar",
+            "pt": "Recarga"
+        },
+        "cancel": {
+            "en": "Cancel",
+            "es": "Cancelar",
+            "pt": "Cancelar"
+        },
+        "amount": {
+            "en": "Amount",
+            "es": "Monto",
+            "pt": "Quantia"
+        },
+        "pay": {
+            "en": "Pay",
+            "es": "Pagar",
+            "pt": "Pagar"
+        },
+        "reloadOtherCard": {
+            "en": "Recharge other card",
+            "es": "Recargar otra tarjeta",
+            "pt": "Recarregar outro cartão"
+        },
+        "receptorCard": {
+            "en": "Receptor card",
+            "es": "Tarjeta de destinatario",
+            "pt": "Cartão de destinatário"
+        },
+        "cardCode": {
+            "en": "Card code",
+            "es": "Código de tarjeta",
+            "pt": "Código do cartão"
+        },
+        "search": {
+            "en": "Search",
+            "es": "Buscar",
+            "pt": "Procurar"
+        },
+        "receptor": {
+            "en": "Receptor",
+            "es": "Destinatario",
+            "pt": "Destinatário"
+        },
+        "logout": {
+            "en": "Logout",
+            "es": "Cerrar Sesión",
+            "pt": "Sair"
         }
     }
-
 }

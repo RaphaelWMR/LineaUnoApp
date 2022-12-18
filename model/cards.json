@@ -1,12 +1,12 @@
 {
-    "1": {
-        "id": "1",
-        "typeEs": "adulto",
-        "saldo": "10.90"
-    },
-    "2": {
-        "id": "2",
-        "typeEs": "medio",
-        "saldo": "15.20"
-    }
+    "cards": [{
+            "id": "1",
+            "typeEs": "adulto",
+        },
+        {
+            "id": "2",
+            "typeEs": "medio",
+            "saldo": "15.20"
+        }
+    ]
 }
