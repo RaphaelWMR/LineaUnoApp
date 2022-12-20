@@ -39,5 +39,5 @@ function getAllUsers()
 
 function showCardCode($code)
 {
-    return substr($code, 0, 4) . '-' . substr($code, 4, 4) . '-' . substr($code, 8, 4);
+    return substr($code, 0, 4) . ' ' . substr($code, 4, 4) . ' ' . substr($code, 8, 4) . ' ' . substr($code, 12, 4);
 }

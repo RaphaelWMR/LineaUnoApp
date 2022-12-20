@@ -3,8 +3,13 @@ $page_tittle = "App Linea Uno"; // Titulo
 $plugins = array(); //Plugins por pagina
 array_push($plugins, "<link rel='stylesheet' href='../css/pay.css'>");
 include('../partials/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/LineaUnoApp/controller/controllerText.php');
 $money = $_GET["money"];
 $money = substr($money, 3);
+$lang = $_GET["lang"];
+$text = getPay($lang);
+$identity = $_GET["user"];
+$pass = $_GET["pass"];
 ?>
 
 
@@ -13,9 +18,9 @@ $money = substr($money, 3);
 <div class="row justify-content-center mt-2 ">
     <div class="card border-success bg-light mb-3" style="width: 90%;">
         <div class="card-body text-success">
-            <h5 class="card-title text-center">MONTO: S/ <?php echo  $money ?></h5>
+            <h5 class="card-title text-center"><?php echo $text['amount']; ?>: S/ <?php echo  $money ?></h5>
             <div class="payment-title">
-                <h1>Informacion de pago</h1>
+                <h1><?php echo $text['payInfo']; ?></h1>
             </div>
             <div class="container preload">
                 <div class="creditcard">
@@ -34,13 +39,11 @@ $money = substr($money, 3);
                                 </g>
                                 <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 4567 8910 1112</text>
                                 <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">JOHN DOE</text>
-                                <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">cardholder name</text>
-                                <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">expiration</text>
-                                <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">card number</text>
+                                <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8"><?php echo $text['cardholder']; ?></text>
+                                <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8"><?php echo $text['expirationDate']; ?></text>
+                                <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8"><?php echo $text['cardNumber']; ?></text>
                                 <g>
                                     <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">01/23</text>
-                                    <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
-                                    <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">THRU</text>
                                     <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		" />
                                 </g>
                                 <g id="cchip">
@@ -103,7 +106,7 @@ $money = substr($money, 3);
                                 </g>
                                 <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity" class="st6 st7">985</text>
                                 <g class="st8">
-                                    <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">security code</text>
+                                    <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">CVV</text>
                                 </g>
                                 <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5" />
                                 <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5" />
@@ -115,18 +118,18 @@ $money = substr($money, 3);
             </div>
             <div class="form-container">
                 <div class="field-container">
-                    <label for="name">Nombres y apellidos</label>
+                    <label for="name"><?php echo $text['cardholder']; ?></label>
                     <input id="name" maxlength="20" type="text">
                 </div>
                 <div class="field-container">
-                    <label for="cardnumber">Número de tarjeta</label>
+                    <label for="cardnumber"><?php echo $text['cardNumber']; ?></label>
                     <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
                     <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
                     </svg>
                 </div>
                 <div class="field-container">
-                    <label for="expirationdate">Vencimiento (mm/yy)</label>
+                    <label for="expirationdate"><?php echo $text['expirationDate']; ?> (mm/yy)</label>
                     <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
                 </div>
                 <div class="field-container">
@@ -140,7 +143,10 @@ $money = substr($money, 3);
                 <div class="text-center row">
                     <form action="./sucessPay.php" method="get">
                         <input type="hidden" name="money" value="<?php echo $money; ?>">
-                        <input type="submit" value="Confirmar recarga" class="btn btn-success m-1">
+                        <input type="hidden" name="lang" value="<?php echo $lang; ?>">
+                        <input type="hidden" name="user" value="<?php echo $identity ?>">
+                        <input type="hidden" name="pass" value="<?php echo $pass ?>">
+                        <input type="submit" value="<?php echo $text['confirmRecharge']; ?>" class="btn btn-success m-1">
                     </form>
                 </div>
             </div>

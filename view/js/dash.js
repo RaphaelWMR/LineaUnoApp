@@ -11,15 +11,15 @@ function hideShowCardMoney(id, label1, label2) {
 }
 
 /*  hideShow form*/
-function hideShowForm(id) {
+function hideShowForm(id, label1, label2) {
     var form = document.getElementById('rechargeForm-' + id);
     var button = document.getElementById('buttonRecharge-' + id);
     if (form.style.display == "none") {
         form.style.display = "block";
-        button.innerHTML = "Cancelar";
+        button.innerHTML = label1; //recharge
     } else {
         form.style.display = "none";
-        button.innerHTML = "Recargar";
+        button.innerHTML = label2; //cancel
     }
 }
 

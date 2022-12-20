@@ -142,5 +142,85 @@
             "es": "Cerrar Sesión",
             "pt": "Sair"
         }
+    },
+    "payForm": {
+        "amount": {
+            "en": "AMOUNT",
+            "es": "MONTO",
+            "pt": "Quantia"
+        },
+        "payInfo": {
+            "en": "Payment information",
+            "es": "Información de pago",
+            "pt": "Informação de pagamento"
+        },
+        "cardholder": {
+            "en": "Cardholder",
+            "es": "Nombres y apellidos",
+            "pt": "Informação de pagamento"
+        },
+        "cardNumber": {
+            "en": "Card Number",
+            "es": "Número de tarjeta",
+            "pt": "Nome e apelidos"
+        },
+        "expirationDate": {
+            "en": "Expiration Date",
+            "es": "Fecha de vencimiento",
+            "pt": "Data de vencimento"
+        },
+        "confirmRecharge": {
+            "en": "Confirm rechargue",
+            "es": "Confirmar recarga",
+            "pt": "Confirmar recarga"
+        }
+    },
+    "succesPay": {
+        "confirmRecharge": {
+            "en": "Successful payment",
+            "es": "Pago exitoso",
+            "pt": "Pagamento bem sucedido"
+        },
+        "totalPaid": {
+            "en": "Total paid",
+            "es": "Total pagado",
+            "pt": "Total pago"
+        },
+        "transactionDate": {
+            "en": "Transaction date",
+            "es": "Fecha de pago",
+            "pt": "Data de pagamento"
+        },
+        "transactionTime": {
+            "en": "Transaction Time",
+            "es": "Hora de la Transacción",
+            "pt": "Tempo de Transação"
+        },
+        "receptorCard": {
+            "en": "Receptor card",
+            "es": "Tarjeta de destino",
+            "pt": "Cartão receptor"
+        },
+        "receptor": {
+            "en": "Receptor",
+            "es": "Destinatario",
+            "pt": "Receptor"
+        },
+        "rechargeCode": {
+            "en": "Recharge Code",
+            "es": "Código de la Recarga",
+            "pt": "Código de recarga"
+        },
+        "successfulPayment": {
+            "en": "Successful payment",
+            "es": "Volver al inicio",
+            "pt": "Pagamento bem sucedido"
+        },
+        "backToHome": {
+            "en": "Back to home",
+            "es": "Volver al inicio",
+            "pt": "Voltar ao início"
+        }
+
     }
 }

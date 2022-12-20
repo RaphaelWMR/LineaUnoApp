@@ -50,3 +50,31 @@ function showCardType($n)
         return "halfFareLabel";
     }
 }
+
+function getPay($lang)
+{
+    $content = getTextJSON();
+    return array(
+        "amount"            => $content->payForm->amount->$lang,
+        "payInfo"           => $content->payForm->payInfo->$lang,
+        "cardNumber"        => $content->payForm->cardNumber->$lang,
+        "cardholder"        => $content->payForm->cardholder->$lang,
+        "expirationDate"    => $content->payForm->expirationDate->$lang,
+        "confirmRecharge"   => $content->payForm->confirmRecharge->$lang
+    );
+}
+function getSuccess($lang)
+{
+    $content = getTextJSON();
+    return array(
+        "confirmRecharge"   => $content->succesPay->confirmRecharge->$lang,
+        "totalPaid"         => $content->succesPay->totalPaid->$lang,
+        "transactionDate"   => $content->succesPay->transactionDate->$lang,
+        "transactionTime"   => $content->succesPay->transactionTime->$lang,
+        "receptorCard"      => $content->succesPay->receptorCard->$lang,
+        "receptor"          => $content->succesPay->receptor->$lang,
+        "rechargeCode"      => $content->succesPay->rechargeCode->$lang,
+        "successfulPayment" => $content->succesPay->successfulPayment->$lang,
+        "backToHome"        => $content->succesPay->backToHome->$lang
+    );
+}

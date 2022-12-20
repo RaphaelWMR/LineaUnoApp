@@ -21,10 +21,6 @@ $colorTxt = 'light';
 <!-- Escribir codigo aqui -->
 
 <div class="row justify-content-center mt-2">
-    <h1><?php echo $user['name']; ?></h1>
-    <br>
-    <h1><?php echo count($user['cards']); ?></h1>
-    <h1><?php echo $user['cards'][0]->id; ?></h1>
     <!-- Cards iterables -->
     <?php
     for ($i = 0; $i < count($user['cards']); $i++) {
@@ -61,13 +57,16 @@ $colorTxt = 'light';
                         <div id="rechargeForm-<?php echo $i; ?>" style="display: none;">
                             <form class="m-1" action="../rechargeCard/payForm.php" method="get">
                                 <div class="form-outline p-1">
-                                    <input type="hidden" name="card" value="<?php $user['cards'][$i]->code; ?>">
+                                    <input type="hidden" name="card" value="<?php echo $user['cards'][$i]->code; ?>">
+                                    <input type="hidden" name="lang" value="<?php echo $lang ?>">
+                                    <input type="hidden" name="user" value="<?php echo $identity ?>">
+                                    <input type="hidden" name="pass" value="<?php echo $pass ?>">
                                     <input type="" id="form1Example1" class="form-control text-center" placeholder="<?php echo $text['amountLabel']; ?> (S/)" onkeypress="mascara(this,cpf)" name="money" />
                                 </div>
                                 <input type="submit" class="btn btn-primary btn-block btn-block" value="<?php echo $text['payLabel']; ?>">
                             </form>
                         </div>
-                        <button id="buttonRecharge-<?php echo $i; ?>" type="button" class="btn btn-<?php echo $colorTxt; ?> m-1 " href="../rechargeCard/rechargeCard.php" onclick="hideShowForm('<?php echo $i; ?>')"><?php echo $text['rechargeCardLabel']; ?></button>
+                        <button id="buttonRecharge-<?php echo $i; ?>" type="button" class="btn btn-<?php echo $colorTxt; ?> m-1 " href="../rechargeCard/rechargeCard.php" onclick="hideShowForm('<?php echo $i; ?>','<?php echo $text['cancelLabel']; ?>','<?php echo $text['rechargeCardLabel']; ?>')"><?php echo $text['rechargeCardLabel']; ?></button>
                     </div>
                 </div>
             </div>
@@ -80,29 +79,29 @@ $colorTxt = 'light';
             <div class="card-header bg-primary  border-light text-light">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <p>Recargar otra tarjeta</p>
+                        <p><?php echo $text['reloadOtherCardLabel']; ?></p>
                     </div>
                 </div>
             </div>
             <div class="card-body text-light">
-                <h5 class="card-title">Tarjeta Destinatario</h5>
+                <h5 class="card-title"><?php echo $text['receptorCardLabel']; ?></h5>
 
                 <div class="form-outline p-1 ">
                     <div class="col">
                         <div class="mb-3">
-                            <label for="otherCardCode" class="form-label">Código de tarjeta</label>
-                            <input type="number" class="form-control" id="otherCardCode" placeholder="123456789101">
+                            <label for="otherCardCode" class="form-label"><?php echo $text['cardCodeLabel']; ?></label>
+                            <input type="text" class="form-control" id="cardnumber" pattern="[0-9]*" placeholder="" inputmode="numeric">
                         </div>
                         <div class="mb-3">
-                            <a id="searchButton" class="btn btn-light" onclick="hideShowOther();">Buscar</a>
+                            <a id="searchButton" class="btn btn-light" onclick="hideShowOther();"><?php echo $text['searchLabel']; ?></a>
                         </div>
                         <div class="mb-3">
-                            <label for="otherCardCode" class="form-label">Destinatario</label>
+                            <label for="otherCardCode" class="form-label"><?php echo $text['receptorLabel']; ?></label>
                             <input type="number" class="form-control" id="otherCardType" placeholder="Tarjeta adulto" style="display: none;" disabled>
                             <input type="text" class="form-control" id="otherCardOwner" placeholder="Juan Jose Perez Quispe" style="display: none;" disabled>
                         </div>
                     </div>
-                    <input type="" id="form1Example1" class="form-control" placeholder="Monto (S/)" onkeypress="mascara(this,cpf);" name="money" />
+                    <input type="" id="form1Example1" class="form-control" placeholder="<?php echo $text['amountLabel']; ?> (S/)" onkeypress="mascara(this,cpf);" name="money" />
                 </div>
 
             </div>
@@ -120,5 +119,7 @@ $colorTxt = 'light';
 
 <?php
 $scripts = array(); //Scripts por pagina
+array_push($scripts, '<script src="../js/pay.js"></script>');
+array_push($scripts, '<script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>');
 include('../partials/footer.php');
 ?>
