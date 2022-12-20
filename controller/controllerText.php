@@ -78,3 +78,36 @@ function getSuccess($lang)
         "backToHome"        => $content->succesPay->backToHome->$lang
     );
 }
+function getSignUp($lang)
+{
+    $content = getTextJSON();
+    return array(
+        "signUp"   => $content->signUp->signUp->$lang,
+        "step"   => $content->signUp->step->$lang,
+        "personalData"   => $content->signUp->personalData->$lang,
+        "idDoc"   => $content->signUp->idDoc->$lang,
+        "idNumber"   => $content->signUp->idNumber->$lang,
+        "firstSurname"   => $content->signUp->firstSurname->$lang,
+        "secondSurname"   => $content->signUp->secondSurname->$lang,
+        "names"   => $content->signUp->names->$lang,
+        "birth"   => $content->signUp->birth->$lang,
+        "contactInfo"   => $content->signUp->contactInfo->$lang,
+        "phone"   => $content->signUp->phone->$lang,
+        "email"   => $content->signUp->email->$lang,
+        "password"   => $content->signUp->password->$lang,
+        "typePassword"   => $content->signUp->typePassword->$lang,
+        "iveRead"   => $content->signUp->iveRead->$lang,
+        "confirmRegistration"   => $content->signUp->confirmRegistration->$lang,
+        "policy"   => $content->signUp->policy->$lang,
+        "create"   => $content->signUp->create->$lang
+    );
+}
+function getEndSignUp($lang)
+{
+    $content = getTextJSON();
+    return array(
+        "registrationCompleted"   => $content->endSignUp->registrationCompleted->$lang,
+        "paragraph"               => $content->endSignUp->paragraph->$lang,
+        "login"                   => $content->endSignUp->login->$lang
+    );
+}

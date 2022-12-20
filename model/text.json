@@ -272,7 +272,63 @@
             "en": "Fill in your contact information",
             "es": "Rellena tus datos de contacto",
             "pt": "Preencha suas informações de contato"
+        },
+        "phone": {
+            "en": "Phone number",
+            "es": "Número de celular",
+            "pt": "Data de nascimento"
+        },
+        "email": {
+            "en": "Email",
+            "es": "Correo electrónico",
+            "pt": "Data de nascimento"
+        },
+        "password": {
+            "en": "Password",
+            "es": "Contraseña",
+            "pt": "Data de nascimento"
+        },
+        "typePassword": {
+            "en": "Type your password",
+            "es": "Digita tu contraseña",
+            "pt": "Data de nascimento"
+        },
+        "confirmRegistration": {
+            "en": "Comfirm registration",
+            "es": "Confirmar registro",
+            "pt": "Data de nascimento"
+        },
+        "iveRead": {
+            "en": "I have read and accept the",
+            "es": "He leido y acepto la",
+            "pt": "Data de nascimento"
+        },
+        "policy": {
+            "en": "Data Protection Policy",
+            "es": "Política de protección de datos",
+            "pt": "Data de nascimento"
+        },
+        "create": {
+            "en": "Create account",
+            "es": "Crear cuenta",
+            "pt": "Data de nascimento"
         }
-
+    },
+    "endSignUp": {
+        "registrationCompleted": {
+            "en": "Registration completed",
+            "es": "Registro completado",
+            "pt": "Registro completado"
+        },
+        "paragraph": {
+            "en": "Now you have an account in the app of the<br>Express 1 of the Lima Metro ",
+            "es": "Ahora ya tienes una cuenta en la app de la<br>Línea 1 del Metro de Lima ",
+            "pt": "Registro completado"
+        },
+        "login": {
+            "en": "Login",
+            "es": "Iniciar sesión",
+            "pt": "Registro completado"
+        }
     }
 }
