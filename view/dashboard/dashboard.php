@@ -85,12 +85,11 @@ $colorTxt = 'light';
             </div>
             <div class="card-body text-light">
                 <h5 class="card-title"><?php echo $text['receptorCardLabel']; ?></h5>
-
                 <div class="form-outline p-1 ">
                     <div class="col">
                         <div class="mb-3">
                             <label for="otherCardCode" class="form-label"><?php echo $text['cardCodeLabel']; ?></label>
-                            <input type="text" class="form-control" id="cardnumber" pattern="[0-9]*" placeholder="" inputmode="numeric">
+                            <input id="cardnumber" class="form-control" type="text"  inputmode="numeric">
                         </div>
                         <div class="mb-3">
                             <a id="searchButton" class="btn btn-light" onclick="hideShowOther();"><?php echo $text['searchLabel']; ?></a>
@@ -99,6 +98,11 @@ $colorTxt = 'light';
                             <label for="otherCardCode" class="form-label"><?php echo $text['receptorLabel']; ?></label>
                             <input type="number" class="form-control" id="otherCardType" placeholder="Tarjeta adulto" style="display: none;" disabled>
                             <input type="text" class="form-control" id="otherCardOwner" placeholder="Juan Jose Perez Quispe" style="display: none;" disabled>
+                            <input type="hidden" name="lang" value="<?php echo $lang ?>">
+                            <input type="hidden" name="user" value="<?php echo $identity ?>">
+                            <input type="hidden" name="pass" value="<?php echo $pass ?>">
+                            <input id="securitycode" type="hidden" pattern="[0-9]*" inputmode="numeric">
+                            <input id="expirationdate" type="hidden" pattern="[0-9]*" inputmode="numeric">
                         </div>
                     </div>
                     <input type="" id="form1Example1" class="form-control" placeholder="<?php echo $text['amountLabel']; ?> (S/)" onkeypress="mascara(this,cpf);" name="money" />
@@ -108,13 +112,13 @@ $colorTxt = 'light';
             <div class="card-footer bg-transparent border-light">
                 <div class="container">
                     <div class="text-center row">
-                        <input type="submit" id="buttonRecharge-other" class="btn btn-light m-1" value="<?php echo $text['payLabel']; ?>">
+                        <input type="submit" value="<?php echo $text['payLabel']; ?>" class="btn btn-success m-1">
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <a href="../login.php" class="btn btn-danger"><?php echo $text['logoutLabel']; ?></a>
+    <a href="../login.php?lang=<?php echo $lang ?>" class="btn btn-danger"><?php echo $text['logoutLabel']; ?></a>
 </div>
 
 <?php

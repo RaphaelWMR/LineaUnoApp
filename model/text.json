@@ -157,12 +157,12 @@
         "cardholder": {
             "en": "Cardholder",
             "es": "Nombres y apellidos",
-            "pt": "Informação de pagamento"
+            "pt": "Nome e apelidos"
         },
         "cardNumber": {
             "en": "Card Number",
             "es": "Número de tarjeta",
-            "pt": "Nome e apelidos"
+            "pt": "Número de cartão"
         },
         "expirationDate": {
             "en": "Expiration Date",
@@ -220,6 +220,58 @@
             "en": "Back to home",
             "es": "Volver al inicio",
             "pt": "Voltar ao início"
+        }
+    },
+    "signUp": {
+        "signUp": {
+            "en": "Sign up",
+            "es": "Registrarme",
+            "pt": "Inscrever-se"
+        },
+        "step": {
+            "en": "Step",
+            "es": "Paso",
+            "pt": "Passo"
+        },
+        "personalData": {
+            "en": "Fill in your personal data",
+            "es": "Rellena tus datos personales",
+            "pt": "Preencha seus dados pessoais"
+        },
+        "idDoc": {
+            "en": "Type of document of identy",
+            "es": "Tipo de documento de identidad",
+            "pt": "Tipo de documento de identidade"
+        },
+        "idNumber": {
+            "en": "Identification document number",
+            "es": "Número de documento de indentidad",
+            "pt": "Número de identificação"
+        },
+        "firstSurname": {
+            "en": "Fist surname",
+            "es": "Primer apellido",
+            "pt": "Primeiro sobrenome"
+        },
+        "secondSurname": {
+            "en": "Second surname",
+            "es": "Segundo apellido",
+            "pt": "Segundo sobrenome"
+        },
+        "names": {
+            "en": "Names",
+            "es": "Nombres",
+            "pt": "Nomes"
+        },
+        "birth": {
+            "en": "Date of birth",
+            "es": "Fecha de nacimiento",
+            "pt": "Data de nascimento"
+        },
+        "contactInfo": {
+            "en": "Fill in your contact information",
+            "es": "Rellena tus datos de contacto",
+            "pt": "Preencha suas informações de contato"
         }
 
     }

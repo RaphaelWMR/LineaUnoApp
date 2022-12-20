@@ -1,12 +1,16 @@
 <?php
-include ("../../controller/controlerSignup.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . '/LineaUnoApp/controller/controlerTextSignup.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/LineaUnoApp/controller/controllerText.php');
 $page_tittle = "App Linea Uno Registrarme";
 $plugins = array();
 include('../partials/header.php');
+$lang = $_GET["lang"];
+$text = getSignUp($lang);
+$codes = getPhoneCodes($lang);
 ?>
 <div class="login m-3">
     <div>
-        <form action="./endSignUp.php">
+        <form action="./endSignUp.php?lang=<?php echo $lang; ?>">
             <div class="align-items-center mb-3 pb-1 text-center">
                 <h2 class="h1 fw-bold">Registrarme</h2>
             </div>
@@ -51,14 +55,13 @@ include('../partials/header.php');
                     <label class="form-label" for="">Número de celular</label>
                     <select name="" id="" class="form-select">
                         <?php
-                            $countryCodes = getPhoneCodes();
-                            foreach ($countryCodes as $name => $code){?>
-                            <option value=""><?php echo $code."\t".$name?></option>
+                        for ($i = 0; $i < count($codes); $i++) { ?>
+                            <option value=""><?php echo $codes[$i]['code'] . "\t" . $codes[$i]['country'] ?></option>
                         <?php
-                            }
+                        }
                         ?>
                     </select>
-                    <input type="tel" id="" class="form-control form-control-lg" placeholder="" />
+                    <input type="number" id="" class="form-control form-control-lg" placeholder="" />
                 </div>
                 <div class="form-outline mb-1">
                     <label class="form-label" for="">Correo electrónico</label>
@@ -66,8 +69,17 @@ include('../partials/header.php');
                 </div>
             </div>
             <!-- Paso 3 -->
+
             <div>
-                <h4 class="">Paso 3: Confirma tu registro</h4>
+                <h4 class="">Paso 3: Contraseña</h4>
+                <div class="form-outline mb-1">
+                    <label class="form-label" for="">Digita tu contraseña</label>
+                    <input type="text" id="" class="form-control form-control-lg" placeholder="" />
+                </div>
+            </div>
+            <!-- Paso 4 -->
+            <div>
+                <h4 class="">Paso 4: Confirma tu registro</h4>
                 <p><input type="checkbox" name="" id=""> He leido y acepto la <a href="./dataProtection.php" target="_blank">Política de protección de datos</a> </p>
             </div>
             <div class="text-center">

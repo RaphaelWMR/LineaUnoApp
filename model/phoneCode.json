@@ -1,14 +1,17 @@
 {
-    "peru": {
-        "id": 1,
-        "es": "Perú",
-        "en": "Peru",
-        "code": "+51"
-    },
-    "venezuela": {
-        "id": 2,
-        "es": "Venezuela",
-        "en": "Venezuela",
-        "code": "+58"
-    }
+    "codes": [{
+            "id": 1,
+            "es": "Perú",
+            "en": "Peru",
+            "pt": "Peru",
+            "code": "+51"
+        },
+        {
+            "id": 2,
+            "es": "Venezuela",
+            "en": "Venezuela",
+            "pt": "Venezuela",
+            "code": "+58"
+        }
+    ]
 }

@@ -35,7 +35,7 @@ include('./partials/header.php');
                 </div>
 
                 <a class="small text-muted" href="#!"><?php echo $text['forgotPasswordLabel']; ?></a>
-                <p class="mb-3 pb-lg-2" style="color: #393f81;"><?php echo $text['donthaveaccountyetLabel']; ?> <a href="./signUp/SignUp.php" style="color: #393f81;"><?php echo $text['singupLink']; ?></a></p>
+                <p class="mb-3 pb-lg-2" style="color: #393f81;"><?php echo $text['donthaveaccountyetLabel']; ?> <a href="./signUp/SignUp.php?lang=<?php echo $lang; ?>" style="color: #393f81;"><?php echo $text['singupLink']; ?></a></p>
                 <a href="./signIn/useTerms.php" class="small text-muted" target="_blank"><?php echo $text['termsLabel']; ?></a>
                 <a href="./signIn/privacy.php" class="small text-muted" target="_blank"><?php echo $text['policyLabel']; ?></a>
             </form>

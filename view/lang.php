@@ -9,7 +9,7 @@ include('./partials/header.php');
     </div>
     <div class="login ">
         <div class="align-items-center mb-3 pb-1 text-center">
-            <h2 class="h3 fw-bold">Languaje/Idioma/Língua</h2>
+            <h2 class="h3 fw-bold">Language/Idioma/Língua</h2>
         </div>
         <div class="text-center">
             <div class="pt-1 mb-4">
